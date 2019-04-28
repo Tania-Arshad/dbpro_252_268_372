@@ -27,6 +27,9 @@
         .auto-style1 {
             width: 396px;
         }
+        .auto-style2 {
+            margin-left: 0;
+        }
     </style>
 
 </head>
@@ -86,21 +89,30 @@
                             <div class="control-group">
                                 <label class="control-label" for="inputFname">Class name </label>
 &nbsp;<div class="controls">
-                                    <input type="text" id="inputCName" placeholder="Class Name" /><br />
+                                    <asp:TextBox ID="ClassNametxt" runat="server"></asp:TextBox>
+                                    <br />
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="inputLname">Class Id</label>
                                 <div class="controls">
-                                    <input type="text" id="inputCId" placeholder="Class Id" /><br />
+                                    <asp:TextBox ID="ClassId" runat="server"></asp:TextBox>
+                                    <br />
 &nbsp;</div>
                             </div>
 
                             <div class="control-group">
-                                <div class="controls">
+                                <div class="controls" style="width: 344px; height: 114px">
                                     <input type="hidden" name="email_create" value="1"/>
                                     <input type="hidden" name="is_new_customer" value="1"/>
-                                    <input class="btn btn-large btn-success" type="submit" value="Add" /> <input class="btn btn-large btn-success" type="submit" value="Update" style="width: 92px" /><input class="btn btn-large btn-success" type="submit" value="Delete" style="width: 86px; margin-left: 0.8em;" /></div>
+&nbsp;<asp:Button ID="Button1" runat="server" Height="33px" OnClick="Button1_Click" Text="Add" Width="83px" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:Button ID="Button4" runat="server" CssClass="auto-style2" Height="34px" OnClick="Button4_Click" Text="Update" />
+&nbsp;&nbsp;&nbsp;
+                                    <asp:Button ID="Button5" runat="server" Height="35px" OnClick="Button5_Click" Text="Delete" />
+                                    <br />
+                                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                </div>
                             </div>
                       
                     </div>

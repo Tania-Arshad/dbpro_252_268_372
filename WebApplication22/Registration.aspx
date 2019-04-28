@@ -25,12 +25,25 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png"/>
     <style type="text/css" id="enject">       
-        .auto-style1 {
-            width: 367px;
-            height: 451px;
+        .auto-style3 {
+            width: 229px;
+            height: 152px;
         }
-        .auto-style2 {
-            width: 303px;
+        .auto-style4 {
+            width: 628px;
+            zoom: 1;
+            margin-left: 171px;
+            margin-right: 0px;
+        }
+        .auto-style6 {
+            margin-left: 39px;
+        }
+        .auto-style7 {
+            margin-bottom: 10px;
+            height: 52px;
+        }
+        .auto-style8 {
+            margin-left: 19px;
         }
     </style>
 
@@ -69,7 +82,7 @@
     </div>
     <!-- Header End====================================================================== -->
     <div id="mainBody">
-        <div class="container">
+        <div class="auto-style4">
             <div class="row">
                 <!-- Sidebar ================================================== -->
                 <div id="sidebar" class="span3">                   
@@ -82,48 +95,49 @@
                     </div>
                 </div>
                 <!-- Sidebar end=============================================== -->
-                <div class="auto-style1">
+               
                     <h3> Registration</h3>
-                    <div class="well">
+                  
                      
                       
-                         
-                            <div class="control-group">
-                                <label class="control-label" for="inputFname">User name </label>
-&nbsp;<div class="controls" style="width: 308px">
-                                    &nbsp;<asp:DropDownList ID="DropDownList1" runat="server">
-                                        <asp:ListItem>Student</asp:ListItem>
-                                        <asp:ListItem>Teacher</asp:ListItem>
-                                        <asp:ListItem>Admin</asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="inputLname">Password</label>
-                                <div class="controls" style="width: 307px">
-                                    <input type="text" id="inputPword" placeholder="Password" />
-                                </div>
-                            </div>
-                         <label class="auto-style2">Confirm Password</label>   
-                        <div class="controls" style="width: 305px">
-                                    <input type="text" id="inputCPword" placeholder="Confirm Password" />
-                                </div>
-             <label class="col-xs-11">Email</label>
-                         <input type="text" id="inputEmail" placeholder="Email" /><br />
-                            <br />
-&nbsp;<input class="btn btn-large btn-success" type="submit" value="Register" /></div>
-               </div>
-                            <div class="control-group">
-                                <div class="controls">
-                                    <input type="hidden" name="email_create" value="1"/>
-                                    <input type="hidden" name="is_new_customer" value="1"/>
-                                    &nbsp;</div>
-                            </div>
-                      
-            
-                    </div>
+       <div class="control-group"> 
+        Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="Nametxt" runat="server"></asp:TextBox>
+                                
+        </div>
 
-                </div>
+     <div class="control-group">
+            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="Emailtxt" runat="server"></asp:TextBox>
+                <br />
+                           
+      </div>
+             
+       
+    <div class="auto-style7">
+       <br />
+        Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+        <asp:TextBox ID="Passwordtxt" runat="server"></asp:TextBox>
+        <br />      
+     </div>
+              
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="UserType"></asp:Label>
+            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style6">
+                <asp:ListItem>Student</asp:ListItem>
+                <asp:ListItem>Teacher</asp:ListItem>
+                <asp:ListItem>Admin</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <br />
+     <asp:Button ID="Button2" runat="server" Text="SignUp" CssClass="auto-style8" OnClick="Button2_Click" />
+     
+<div class="control-group">
+            </div>
+     
+       </div>
+                            
+              </div>         
        
   
     <!-- MainBody End ============================= -->
@@ -138,7 +152,7 @@
                     <a href="login.html">ADDRESSES</a>
                  
                 </div>
-                <div class="span3">
+                <div class="auto-style3">
                     <h5>INFORMATION</h5>
                     <a href="contact.html">CONTACT</a>
                     <a href="register.html">REGISTRATION</a>

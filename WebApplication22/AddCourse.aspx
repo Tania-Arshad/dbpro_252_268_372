@@ -28,6 +28,13 @@
             width: 333px;
             height: 559px;
         }
+        .auto-style2 {
+            margin-left: 1;
+            margin-top: 22px;
+        }
+        .auto-style3 {
+            margin-left: 13;
+        }
     </style>
 
     </head>
@@ -87,32 +94,30 @@
                             <div class="control-group">
                                 <label class="control-label" for="inputFname">Course name </label>
 &nbsp;<div class="controls">
-                                    <input type="text" id="inputLname0" placeholder="Course Name" /></div>
+                                    <asp:TextBox ID="CourseNametxt" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="inputLname">Course Id</label>
                                 <div class="controls">
-                                    <input type="text" id="inputLname" placeholder="Course Id" />
+                                    &nbsp;<asp:TextBox ID="CourseIdtxt" runat="server"></asp:TextBox>
+                                    <br />
                                 </div>
                             </div>
 
                             <div class="control-group">
-                                <div class="controls" style="width: 311px">
+                                <div class="controls" style="width: 310px; height: 129px; margin-top: 14px;">
                                     <input type="hidden" name="email_create" value="1"/>
                                     <input type="hidden" name="is_new_customer" value="1"/>
-                                    <input class="btn btn-large btn-success" type="submit" value="Add" />
-                                    <input class="btn btn-large btn-success" type="submit" value="Update" style="width: 89px" /> <input class="btn btn-large btn-success" type="submit" value="Delete" style="width: 86px" /><asp:GridView ID="GridView1" runat="server" AllowPaging="true" AlternatingRowStyle-CssClass="alt" AutoGenerateColumns="false" CssClass="mGrid" GridLines="None" Height="16px" PagerStyle-CssClass="pgr" style="margin-top: 33px; margin-bottom: 0px;" Width="215px">
-                                        <Columns>
-                                            <asp:BoundField DataField="CourseName" HeaderText="CourseName" />
-                                            <asp:BoundField DataField="CourseId" HeaderText="CourseId" />
-                                           
-                                            <asp:TemplateField>
-                                                <ItemTemplate>
-                                              
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                        </Columns>
-                                    </asp:GridView>
+                                    <asp:Button ID="Button1" runat="server" Height="34px" OnClick="Button1_Click" Text="Add" Width="59px" />
+                                    <asp:Button ID="Button2" runat="server" CssClass="auto-style3" Height="37px" OnClick="Button2_Click" Text="Update" />
+&nbsp;<asp:Button ID="Button3" runat="server" Height="34px" OnClick="Button3_Click" Text="Delete" />
+&nbsp;<br />
+                                    <br />
+                                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                    <br />
+                                    <asp:Button ID="Button4" runat="server" CssClass="auto-style2" Height="29px" OnClick="Button4_Click" Text="Next" Width="51px" />
+                                    <br />
                                 </div>
                             </div>
                       

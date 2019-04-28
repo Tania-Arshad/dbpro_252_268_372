@@ -36,6 +36,8 @@
     
 
       <form id="form2" runat="server">
+                                    <input type="hidden" name="is_new_customer" value="1"/>
+                                    <input type="hidden" name="email_create" value="1"/>
       <div id="header">
         <div class="container">
             <div id="welcomeLine" class="row">
@@ -107,35 +109,44 @@
                     <div class="well">
                      
                       
-                         
-                            <div class="control-group">
-                                <label class="control-label" for="inputFname">User name </label>
-                                <div class="controls">
-                                    &nbsp;<asp:DropDownList ID="DropDownList1" runat="server">
+
+                            <div>
+            
+        Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="Emailtxt" runat="server"></asp:TextBox>
+        &nbsp;<br />
+        <br />
+        Password:&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="Passwordtxt" runat="server"></asp:TextBox>
+                                <br />
+        <br />
+                                <label class="control-label" for="inputFname" style="height: 54px">User Type&nbsp; <asp:DropDownList ID="DropDownList1" runat="server">
                                         <asp:ListItem>Student</asp:ListItem>
                                         <asp:ListItem>Teacher</asp:ListItem>
                                         <asp:ListItem>Admin</asp:ListItem>
                                     </asp:DropDownList>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="inputPname">Password</label>
-                                
-                                    <input type="text" id="inputp" placeholder="Password" />
-                                <div class="controls" style="width: 295px; height: 37px">
-                                  
-                                </div>
-                            </div>
+                                </label>
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />
+        <br />
+        <br />
+        </div>
+        
+    <asp:Label ID="Label1" runat="server"></asp:Label>
 
+
+
+
+
+
+
+
+
+
+
+                         
                             <div class="control-group">
-                                <div class="controls" style="height: 125px">
-                                    <input type="hidden" name="email_create" value="1"/>
-                                    <input type="hidden" name="is_new_customer" value="1"/>
-                                    <asp:CheckBox ID="CheckBox1" runat="server" />
-                                    <asp:Label ID="Label3" runat="server" CssClass="control-label" Text="Remember me ?"></asp:Label>
-&nbsp;<br />
-                                    <br />
-                                    <input class="btn btn-large btn-success" type="submit" value="Login" /></div>
+                                <div class="controls">
+                                    &nbsp;</div>
                             </div>
                       
                     </div>
