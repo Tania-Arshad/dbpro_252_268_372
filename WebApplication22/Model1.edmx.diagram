@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f4356b726f5a44edbcd5c65e5ff5ec88" Name="Diagram1">
+        <EntityTypeShape EntityType="FinalModel.AddSection" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalModel.AddTeacher" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalModel.Cours" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalModel.Registration" Width="1.5" PointX="6" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalModel.DateSheet" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalModel.FeeChallan" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalModel.ManageAttendance" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalModel.ManagePayRoll" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalModel.TimeTable" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="FinalModel.FK_DateSheet_AddSection" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_TimeTable_AddSection" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_DateSheet_AddTeacher" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_ManageAttendance_AddTeacher" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_ManagePayRoll_AddTeacher" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_TimeTable_AddTeacher" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_DateSheet_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_ManageAttendance_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_TimeTable_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_FeeChallan_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.FK_ManageAttendance_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.StudentSection" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalModel.TeacherCourse" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

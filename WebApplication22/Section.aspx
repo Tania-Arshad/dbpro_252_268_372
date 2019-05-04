@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png"/>
     <style type="text/css" id="enject">       
         .auto-style1 {
-            width: 662px;
+            width: 662px;<a href="ManageAssignment.aspx">ManageAssignment.aspx</a>
             margin-left: 88px;
             margin-right: 263px;
         }
@@ -213,7 +213,7 @@
                                         <Columns>
                                             <asp:BoundField DataField="SectionId" HeaderText="SectionId" InsertVisible="False" ReadOnly="True" SortExpression="SectionId" />
                                             <asp:BoundField DataField="SectionTitle" HeaderText="SectionTitle" SortExpression="SectionTitle" />
-                                            <asp:BoundField DataField="SectionDetails" HeaderText="SectionDetails" SortExpression="SectionDetails" />
+                                            <asp:BoundField DataField="SectionDetail" HeaderText="SectionDetail" SortExpression="SectionDetail" />
                                         </Columns>
                                         <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                                         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -237,11 +237,11 @@
                                         </DeleteParameters>
                                         <InsertParameters>
                                             <asp:Parameter Name="SectionTitle" Type="String" />
-                                            <asp:Parameter Name="SectionDetails" Type="String" />
+                                            <asp:Parameter Name="SectionDetail" Type="String" />
                                         </InsertParameters>
                                         <UpdateParameters>
                                             <asp:Parameter Name="SectionTitle" Type="String" />
-                                            <asp:Parameter Name="SectionDetails" Type="String" />
+                                            <asp:Parameter Name="SectionDetail" Type="String" />
                                             <asp:Parameter Name="SectionId" Type="Int32" />
                                         </UpdateParameters>
                                     </asp:SqlDataSource>

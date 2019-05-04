@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AddSection">
+    <Key>
+      <PropertyRef Name="SectionId" />
+    </Key>
+    <Property Name="SectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SectionTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SectionDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DateSheets" Relationship="Self.FK_DateSheet_AddSection" FromRole="AddSection" ToRole="DateSheet" />
+    <NavigationProperty Name="TimeTables" Relationship="Self.FK_TimeTable_AddSection" FromRole="AddSection" ToRole="TimeTable" />
+    <NavigationProperty Name="Registrations" Relationship="Self.StudentSection" FromRole="AddSection" ToRole="Registration" />
+  </EntityType>
+  <EntityType Name="AddTeacher">
+    <Key>
+      <PropertyRef Name="TeacherId" />
+    </Key>
+    <Property Name="TeacherId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DateSheets" Relationship="Self.FK_DateSheet_AddTeacher" FromRole="AddTeacher" ToRole="DateSheet" />
+    <NavigationProperty Name="ManageAttendances" Relationship="Self.FK_ManageAttendance_AddTeacher" FromRole="AddTeacher" ToRole="ManageAttendance" />
+    <NavigationProperty Name="ManagePayRolls" Relationship="Self.FK_ManagePayRoll_AddTeacher" FromRole="AddTeacher" ToRole="ManagePayRoll" />
+    <NavigationProperty Name="TimeTables" Relationship="Self.FK_TimeTable_AddTeacher" FromRole="AddTeacher" ToRole="TimeTable" />
+    <NavigationProperty Name="Courses" Relationship="Self.TeacherCourse" FromRole="AddTeacher" ToRole="Courses" />
+  </EntityType>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DateSheets" Relationship="Self.FK_DateSheet_Courses" FromRole="Courses" ToRole="DateSheet" />
+    <NavigationProperty Name="ManageAttendances" Relationship="Self.FK_ManageAttendance_Courses" FromRole="Courses" ToRole="ManageAttendance" />
+    <NavigationProperty Name="TimeTables" Relationship="Self.FK_TimeTable_Courses" FromRole="Courses" ToRole="TimeTable" />
+    <NavigationProperty Name="AddTeachers" Relationship="Self.TeacherCourse" FromRole="Courses" ToRole="AddTeacher" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="FeeChallans" Relationship="Self.FK_FeeChallan_Registration" FromRole="Registration" ToRole="FeeChallan" />
+    <NavigationProperty Name="ManageAttendances" Relationship="Self.FK_ManageAttendance_Registration" FromRole="Registration" ToRole="ManageAttendance" />
+    <NavigationProperty Name="AddSections" Relationship="Self.StudentSection" FromRole="Registration" ToRole="AddSection" />
+  </EntityType>
+  <EntityType Name="DateSheet">
+    <Key>
+      <PropertyRef Name="CourseId" />
+      <PropertyRef Name="TeacherId" />
+      <PropertyRef Name="SectionId" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="TeacherId" Type="Int32" Nullable="false" />
+    <Property Name="SectionId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="AddSection" Relationship="Self.FK_DateSheet_AddSection" FromRole="DateSheet" ToRole="AddSection" />
+    <NavigationProperty Name="AddTeacher" Relationship="Self.FK_DateSheet_AddTeacher" FromRole="DateSheet" ToRole="AddTeacher" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK_DateSheet_Courses" FromRole="DateSheet" ToRole="Courses" />
+  </EntityType>
+  <EntityType Name="FeeChallan">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ChallanId" />
+      <PropertyRef Name="ChallanNo" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ChallanId" Type="Int32" Nullable="false" />
+    <Property Name="ChallanNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_FeeChallan_Registration" FromRole="FeeChallan" ToRole="Registration" />
+  </EntityType>
+  <EntityType Name="ManageAttendance">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="TeacherId" />
+      <PropertyRef Name="CourseId" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TeacherId" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AddTeacher" Relationship="Self.FK_ManageAttendance_AddTeacher" FromRole="ManageAttendance" ToRole="AddTeacher" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK_ManageAttendance_Courses" FromRole="ManageAttendance" ToRole="Courses" />
+    <NavigationProperty Name="Registration" Relationship="Self.FK_ManageAttendance_Registration" FromRole="ManageAttendance" ToRole="Registration" />
+  </EntityType>
+  <EntityType Name="ManagePayRoll">
+    <Key>
+      <PropertyRef Name="TeacherId" />
+      <PropertyRef Name="Salary" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="TeacherId" Type="Int32" Nullable="false" />
+    <Property Name="Salary" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AddTeacher" Relationship="Self.FK_ManagePayRoll_AddTeacher" FromRole="ManagePayRoll" ToRole="AddTeacher" />
+  </EntityType>
+  <EntityType Name="TimeTable">
+    <Key>
+      <PropertyRef Name="TeacherId" />
+      <PropertyRef Name="SectionId" />
+      <PropertyRef Name="CourseId" />
+      <PropertyRef Name="StartTime" />
+      <PropertyRef Name="EndTime" />
+    </Key>
+    <Property Name="TeacherId" Type="Int32" Nullable="false" />
+    <Property Name="SectionId" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="AddSection" Relationship="Self.FK_TimeTable_AddSection" FromRole="TimeTable" ToRole="AddSection" />
+    <NavigationProperty Name="AddTeacher" Relationship="Self.FK_TimeTable_AddTeacher" FromRole="TimeTable" ToRole="AddTeacher" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK_TimeTable_Courses" FromRole="TimeTable" ToRole="Courses" />
+  </EntityType>
+  <Association Name="FK_DateSheet_AddSection">
+    <End Role="AddSection" Type="Self.AddSection" Multiplicity="1" />
+    <End Role="DateSheet" Type="Self.DateSheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddSection">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="DateSheet">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeTable_AddSection">
+    <End Role="AddSection" Type="Self.AddSection" Multiplicity="1" />
+    <End Role="TimeTable" Type="Self.TimeTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddSection">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="TimeTable">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DateSheet_AddTeacher">
+    <End Role="AddTeacher" Type="Self.AddTeacher" Multiplicity="1" />
+    <End Role="DateSheet" Type="Self.DateSheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddTeacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="DateSheet">
+        <PropertyRef Name="TeacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManageAttendance_AddTeacher">
+    <End Role="AddTeacher" Type="Self.AddTeacher" Multiplicity="1" />
+    <End Role="ManageAttendance" Type="Self.ManageAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddTeacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="ManageAttendance">
+        <PropertyRef Name="TeacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManagePayRoll_AddTeacher">
+    <End Role="AddTeacher" Type="Self.AddTeacher" Multiplicity="1" />
+    <End Role="ManagePayRoll" Type="Self.ManagePayRoll" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddTeacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="ManagePayRoll">
+        <PropertyRef Name="TeacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeTable_AddTeacher">
+    <End Role="AddTeacher" Type="Self.AddTeacher" Multiplicity="1" />
+    <End Role="TimeTable" Type="Self.TimeTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddTeacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="TimeTable">
+        <PropertyRef Name="TeacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DateSheet_Courses">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+    <End Role="DateSheet" Type="Self.DateSheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="DateSheet">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManageAttendance_Courses">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+    <End Role="ManageAttendance" Type="Self.ManageAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="ManageAttendance">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeTable_Courses">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+    <End Role="TimeTable" Type="Self.TimeTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="TimeTable">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FeeChallan_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+    <End Role="FeeChallan" Type="Self.FeeChallan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Registration">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FeeChallan">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManageAttendance_Registration">
+    <End Role="Registration" Type="Self.Registration" Multiplicity="1" />
+    <End Role="ManageAttendance" Type="Self.ManageAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Registration">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ManageAttendance">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentSection">
+    <End Role="AddSection" Type="Self.AddSection" Multiplicity="*" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+  </Association>
+  <Association Name="TeacherCourse">
+    <End Role="AddTeacher" Type="Self.AddTeacher" Multiplicity="*" />
+    <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="FinalEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AddSections" EntityType="Self.AddSection" />
+    <EntitySet Name="AddTeachers" EntityType="Self.AddTeacher" />
+    <EntitySet Name="Courses" EntityType="Self.Cours" />
+    <EntitySet Name="Registrations" EntityType="Self.Registration" />
+    <EntitySet Name="DateSheets" EntityType="Self.DateSheet" />
+    <EntitySet Name="FeeChallans" EntityType="Self.FeeChallan" />
+    <EntitySet Name="ManageAttendances" EntityType="Self.ManageAttendance" />
+    <EntitySet Name="ManagePayRolls" EntityType="Self.ManagePayRoll" />
+    <EntitySet Name="TimeTables" EntityType="Self.TimeTable" />
+    <AssociationSet Name="FK_DateSheet_AddSection" Association="Self.FK_DateSheet_AddSection">
+      <End Role="AddSection" EntitySet="AddSections" />
+      <End Role="DateSheet" EntitySet="DateSheets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeTable_AddSection" Association="Self.FK_TimeTable_AddSection">
+      <End Role="AddSection" EntitySet="AddSections" />
+      <End Role="TimeTable" EntitySet="TimeTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DateSheet_AddTeacher" Association="Self.FK_DateSheet_AddTeacher">
+      <End Role="AddTeacher" EntitySet="AddTeachers" />
+      <End Role="DateSheet" EntitySet="DateSheets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManageAttendance_AddTeacher" Association="Self.FK_ManageAttendance_AddTeacher">
+      <End Role="AddTeacher" EntitySet="AddTeachers" />
+      <End Role="ManageAttendance" EntitySet="ManageAttendances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManagePayRoll_AddTeacher" Association="Self.FK_ManagePayRoll_AddTeacher">
+      <End Role="AddTeacher" EntitySet="AddTeachers" />
+      <End Role="ManagePayRoll" EntitySet="ManagePayRolls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeTable_AddTeacher" Association="Self.FK_TimeTable_AddTeacher">
+      <End Role="AddTeacher" EntitySet="AddTeachers" />
+      <End Role="TimeTable" EntitySet="TimeTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DateSheet_Courses" Association="Self.FK_DateSheet_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="DateSheet" EntitySet="DateSheets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManageAttendance_Courses" Association="Self.FK_ManageAttendance_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="ManageAttendance" EntitySet="ManageAttendances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeTable_Courses" Association="Self.FK_TimeTable_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="TimeTable" EntitySet="TimeTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FeeChallan_Registration" Association="Self.FK_FeeChallan_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="FeeChallan" EntitySet="FeeChallans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManageAttendance_Registration" Association="Self.FK_ManageAttendance_Registration">
+      <End Role="Registration" EntitySet="Registrations" />
+      <End Role="ManageAttendance" EntitySet="ManageAttendances" />
+    </AssociationSet>
+    <AssociationSet Name="StudentSection" Association="Self.StudentSection">
+      <End Role="AddSection" EntitySet="AddSections" />
+      <End Role="Registration" EntitySet="Registrations" />
+    </AssociationSet>
+    <AssociationSet Name="TeacherCourse" Association="Self.TeacherCourse">
+      <End Role="AddTeacher" EntitySet="AddTeachers" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="FinalConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FinalConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.FinalConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="UserType" msprop:Generator_ColumnVarNameInTable="columnUserType" msprop:Generator_ColumnPropNameInRow="UserType" msprop:Generator_ColumnPropNameInTable="UserTypeColumn" msprop:Generator_UserColumnName="UserType" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" type="xs:string" minOccurs="0" />
+              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" type="xs:string" minOccurs="0" />
+              <xs:element name="SectionId" msprop:Generator_ColumnVarNameInTable="columnSectionId" msprop:Generator_ColumnPropNameInRow="SectionId" msprop:Generator_ColumnPropNameInTable="SectionIdColumn" msprop:Generator_UserColumnName="SectionId" type="xs:string" minOccurs="0" />
+              <xs:element name="ChallanId" msprop:Generator_ColumnVarNameInTable="columnChallanId" msprop:Generator_ColumnPropNameInRow="ChallanId" msprop:Generator_ColumnPropNameInTable="ChallanIdColumn" msprop:Generator_UserColumnName="ChallanId" type="xs:string" minOccurs="0" />
+              <xs:element name="ChallanNo" msprop:Generator_ColumnVarNameInTable="columnChallanNo" msprop:Generator_ColumnPropNameInRow="ChallanNo" msprop:Generator_ColumnPropNameInTable="ChallanNoColumn" msprop:Generator_UserColumnName="ChallanNo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_RowClassName="DataTable2Row" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CourseId" msprop:Generator_ColumnVarNameInTable="columnCourseId" msprop:Generator_ColumnPropNameInRow="CourseId" msprop:Generator_ColumnPropNameInTable="CourseIdColumn" msprop:Generator_UserColumnName="CourseId" type="xs:string" minOccurs="0" />
+              <xs:element name="CourseTitle" msprop:Generator_ColumnVarNameInTable="columnCourseTitle" msprop:Generator_ColumnPropNameInRow="CourseTitle" msprop:Generator_ColumnPropNameInTable="CourseTitleColumn" msprop:Generator_UserColumnName="CourseTitle" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TimeTable" msprop:Generator_TableClassName="TimeTableDataTable" msprop:Generator_TableVarName="tableTimeTable" msprop:Generator_TablePropName="TimeTable" msprop:Generator_RowDeletingName="TimeTableRowDeleting" msprop:Generator_RowChangingName="TimeTableRowChanging" msprop:Generator_RowEvHandlerName="TimeTableRowChangeEventHandler" msprop:Generator_RowDeletedName="TimeTableRowDeleted" msprop:Generator_UserTableName="TimeTable" msprop:Generator_RowChangedName="TimeTableRowChanged" msprop:Generator_RowEvArgName="TimeTableRowChangeEvent" msprop:Generator_RowClassName="TimeTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TeacherId" msprop:Generator_ColumnVarNameInTable="columnTeacherId" msprop:Generator_ColumnPropNameInRow="TeacherId" msprop:Generator_ColumnPropNameInTable="TeacherIdColumn" msprop:Generator_UserColumnName="TeacherId" type="xs:int" />
+              <xs:element name="SectionId" msprop:Generator_ColumnVarNameInTable="columnSectionId" msprop:Generator_ColumnPropNameInRow="SectionId" msprop:Generator_ColumnPropNameInTable="SectionIdColumn" msprop:Generator_UserColumnName="SectionId" type="xs:int" />
+              <xs:element name="CourseId" msprop:Generator_ColumnVarNameInTable="columnCourseId" msprop:Generator_ColumnPropNameInRow="CourseId" msprop:Generator_ColumnPropNameInTable="CourseIdColumn" msprop:Generator_UserColumnName="CourseId" type="xs:int" />
+              <xs:element name="StartTime" msprop:Generator_ColumnVarNameInTable="columnStartTime" msprop:Generator_ColumnPropNameInRow="StartTime" msprop:Generator_ColumnPropNameInTable="StartTimeColumn" msprop:Generator_UserColumnName="StartTime" type="xs:dateTime" />
+              <xs:element name="EndTime" msprop:Generator_ColumnVarNameInTable="columnEndTime" msprop:Generator_ColumnPropNameInRow="EndTime" msprop:Generator_ColumnPropNameInTable="EndTimeColumn" msprop:Generator_UserColumnName="EndTime" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DateSheet" msprop:Generator_TableClassName="DateSheetDataTable" msprop:Generator_TableVarName="tableDateSheet" msprop:Generator_TablePropName="DateSheet" msprop:Generator_RowDeletingName="DateSheetRowDeleting" msprop:Generator_RowChangingName="DateSheetRowChanging" msprop:Generator_RowEvHandlerName="DateSheetRowChangeEventHandler" msprop:Generator_RowDeletedName="DateSheetRowDeleted" msprop:Generator_UserTableName="DateSheet" msprop:Generator_RowChangedName="DateSheetRowChanged" msprop:Generator_RowEvArgName="DateSheetRowChangeEvent" msprop:Generator_RowClassName="DateSheetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CourseId" msprop:Generator_ColumnVarNameInTable="columnCourseId" msprop:Generator_ColumnPropNameInRow="CourseId" msprop:Generator_ColumnPropNameInTable="CourseIdColumn" msprop:Generator_UserColumnName="CourseId" type="xs:int" />
+              <xs:element name="TeacherId" msprop:Generator_ColumnVarNameInTable="columnTeacherId" msprop:Generator_ColumnPropNameInRow="TeacherId" msprop:Generator_ColumnPropNameInTable="TeacherIdColumn" msprop:Generator_UserColumnName="TeacherId" type="xs:int" />
+              <xs:element name="SectionId" msprop:Generator_ColumnVarNameInTable="columnSectionId" msprop:Generator_ColumnPropNameInRow="SectionId" msprop:Generator_ColumnPropNameInTable="SectionIdColumn" msprop:Generator_UserColumnName="SectionId" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ManageAttendance" msprop:Generator_TableClassName="ManageAttendanceDataTable" msprop:Generator_TableVarName="tableManageAttendance" msprop:Generator_RowChangedName="ManageAttendanceRowChanged" msprop:Generator_TablePropName="ManageAttendance" msprop:Generator_RowDeletingName="ManageAttendanceRowDeleting" msprop:Generator_RowChangingName="ManageAttendanceRowChanging" msprop:Generator_RowEvHandlerName="ManageAttendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="ManageAttendanceRowDeleted" msprop:Generator_RowClassName="ManageAttendanceRow" msprop:Generator_UserTableName="ManageAttendance" msprop:Generator_RowEvArgName="ManageAttendanceRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="TeacherId" msprop:Generator_ColumnVarNameInTable="columnTeacherId" msprop:Generator_ColumnPropNameInRow="TeacherId" msprop:Generator_ColumnPropNameInTable="TeacherIdColumn" msprop:Generator_UserColumnName="TeacherId" type="xs:int" />
+              <xs:element name="CourseId" msprop:Generator_ColumnVarNameInTable="columnCourseId" msprop:Generator_ColumnPropNameInRow="CourseId" msprop:Generator_ColumnPropNameInTable="CourseIdColumn" msprop:Generator_UserColumnName="CourseId" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AddTeacher" msprop:Generator_TableClassName="AddTeacherDataTable" msprop:Generator_TableVarName="tableAddTeacher" msprop:Generator_TablePropName="AddTeacher" msprop:Generator_RowDeletingName="AddTeacherRowDeleting" msprop:Generator_RowChangingName="AddTeacherRowChanging" msprop:Generator_RowEvHandlerName="AddTeacherRowChangeEventHandler" msprop:Generator_RowDeletedName="AddTeacherRowDeleted" msprop:Generator_UserTableName="AddTeacher" msprop:Generator_RowChangedName="AddTeacherRowChanged" msprop:Generator_RowEvArgName="AddTeacherRowChangeEvent" msprop:Generator_RowClassName="AddTeacherRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TeacherId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTeacherId" msprop:Generator_ColumnPropNameInRow="TeacherId" msprop:Generator_ColumnPropNameInTable="TeacherIdColumn" msprop:Generator_UserColumnName="TeacherId" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PhoneNo" msprop:Generator_ColumnVarNameInTable="columnPhoneNo" msprop:Generator_ColumnPropNameInRow="PhoneNo" msprop:Generator_ColumnPropNameInTable="PhoneNoColumn" msprop:Generator_UserColumnName="PhoneNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AddTeacher" />
+      <xs:field xpath="mstns:TeacherId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -11,7 +11,7 @@ namespace WebApplication22
 {
     public partial class ManageTeacher : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection("Data Source=SAIRA-PC\\SQLEXPRESS;Initial Catalog=Final;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-NP9KJ9D\\MSSQLSERVER2014;Initial Catalog=Final;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
 
