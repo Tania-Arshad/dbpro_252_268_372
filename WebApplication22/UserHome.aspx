@@ -71,6 +71,9 @@
              <li> 
                 Result will be shown to each student.
             </li>
+            <li> 
+                Student must pass all the prerequisites of the subject.
+            </li>
         </ul>
         
         <br />
